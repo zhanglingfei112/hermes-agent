@@ -112,7 +112,7 @@ jobs:
   # (including PRs) get balanced slicing.
   save-durations:
     needs: test
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/ethie/faster-tests-fake-main'
+    if: always() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/ethie/faster-tests-fake-main')
     runs-on: ubuntu-latest
     steps:
       - name: Download all slice durations
